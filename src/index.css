@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root{
+--preto-espaco: #0b0f1a;
+--azul-escuro: #07103a;
+--azul-cosmo: #60a5fa;
+}
+
+
+/* Fix for the right-side color issue you had: ensure the whole page background is on body/html not just #root container */
+html, body, #root { height: 100%; }
+body {
+margin: 0; padding: 0;
+background: linear-gradient(135deg, var(--preto-espaco) 0%, var(--azul-escuro) 50%, rgba(96,165,250,0.06) 100%);
+background-image: radial-gradient( rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(135deg, var(--preto-espaco) 0%, var(--azul-escuro) 50%, rgba(96,165,250,0.06) 100%);
+background-size: 200px 100px, cover;
+font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+
+/* Utility colors for tailwind usage */
+.bg-portfolio-bg { background: transparent; }
+.text-azul-cosmo { color: var(--azul-cosmo); }
+.bg-azul-cosmo\/90 { background-color: rgba(96,165,250,0.9); }
+.border-azul-escuro { border-color: var(--azul-escuro); }
+
+
+/* Animations */
+@keyframes fade-in-up { from { opacity: 0; transform: translateY(20px);} to { opacity:1; transform: translateY(0);} }
+.fade-in-up { animation: fade-in-up .7s ease-out both; }
+
+
+/* small helper for blob rounding */
+.rounded-\[30\%\] { border-radius: 30%; }
