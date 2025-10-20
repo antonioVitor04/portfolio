@@ -24,7 +24,7 @@ const skills = [
   { name: 'React.js', icon: reactIcon },
   { name: 'Tailwind CSS', icon: tailwindIcon },
   { name: 'Vite', icon: viteIcon },
-  { name: 'Git/GitHub', icon: githubIcon },
+  { name: 'GitHub', icon: githubIcon },
   { name: 'Figma', icon: figmaIcon },
   { name: 'MySQL', icon: mysqlIcon },
   { name: 'MongoDB', icon: mongodbIcon },
@@ -32,7 +32,7 @@ const skills = [
   { name: 'Azure', icon: azureIcon },
   { name: 'Scrum', icon: trelloIcon },
   { name: 'Pacote Office', icon: wordIcon },
-  { name: 'G-Suite', icon: notionIcon },
+  { name: 'Notion', icon: notionIcon },
 ];
 
 export default function Skills() {

@@ -82,16 +82,18 @@ export default function Certificates() {
         <h2 className="text-4xl font-bold text-azul-cosmo mb-8">Certificates</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certificates.map((c) => (
-            <div key={c.id} className="bg-black/30 backdrop-blur-md rounded-2xl overflow-hidden p-6 hover:scale-[1.02] transition">
-              <div className="flex items-center gap-4">
-                <img src={c.imagem} alt={c.instituicao} className="w-14 h-14 object-contain rounded-2xl" />
-                <div>
-                  <h3 className="font-bold text-lg">{c.nome}</h3>
-                  <p className="text-sm text-gray-400">{c.instituicao} — {c.ano}</p>
+            <div key={c.id} className="relative bg-black/30 backdrop-blur-md rounded-2xl overflow-hidden p-6 hover:scale-[1.02] transition">
+              <div className="pb-10">
+                <div className="flex items-center gap-4">
+                  <img src={c.imagem} alt={c.instituicao} className="w-14 h-14 object-contain rounded-2xl" />
+                  <div>
+                    <h3 className="font-bold text-lg">{c.nome}</h3>
+                    <p className="text-sm text-gray-400">{c.instituicao} — {c.ano}</p>
+                  </div>
                 </div>
+                <p className="mt-4 text-gray-300">{c.descricao}</p>
               </div>
-              <p className="mt-4 text-gray-300">{c.descricao}</p>
-              <a href={c.link} target="_blank" className="text-azul-cosmo mt-3 inline-block hover:underline">Ver certificado →</a>
+              <a href={c.link} target="_blank" className="absolute bottom-6 left-6 text-azul-cosmo hover:underline">Ver certificado →</a>
             </div>
           ))}
         </div>

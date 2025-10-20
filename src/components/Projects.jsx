@@ -8,7 +8,7 @@ const projetos = [
         descricao:
             'Memória encantada é um jogo em que o aluno seleciona duas cartas por vez. Quando as cartas são iguais, elas desaparecem do tabuleiro. O tempo de conclusão é registrado para cada aluno, e ao final é gerado um ranking baseado no desempenho.',
         ano: '2024',
-        imagem: '/images/projeto1.jpg',
+        imagem: '/images/projeto1.png',
         tecnologias: ['Java', 'MySQL', 'Astah', 'NetBeans', 'Git', 'GitHub'],
         github: 'https://github.com/antonioVitor04/PII_1S_2024',
         linkedin: 'https://linkedin.com'
@@ -43,7 +43,7 @@ const projetos = [
         ano: '2025',
         imagem: '/images/projeto4.png',
         tecnologias: ['Unity', 'C#', 'Git', 'GitLab'],
-        github: 'https://github.com/antonioVitor04/PII_1S_2024',
+        github: 'https://gitlab.com/nawatparty_temp/NawatParty',
         linkedin: 'https://linkedin.com'
     },
     {
@@ -54,7 +54,7 @@ const projetos = [
         ano: '2025',
         imagem: '/images/projeto5.png',
         tecnologias: ['React', 'Tailwind', 'Node.js', 'Javascript', 'Vite', 'Git', 'GitHub'],
-        github: 'https://github.com/antonioVitor04/PII_1S_2024',
+        github: 'https://github.com/antonioVitor04/portfolio',
         linkedin: 'https://linkedin.com'
     }
 ]
@@ -76,7 +76,7 @@ export default function Projects() {
                 </div>
                 
                 {/* Molde estilo browser */}
-                <div className="relative w-full h-full bg-gray-900 rounded-lg shadow-2xl border border-azul-cosmo/30 overflow-hidden">
+                <div className="relative w-7/12 h-full bg-gray-900 rounded-lg shadow-2xl border border-azul-cosmo/30 overflow-hidden flex-shrink-0">
                   {/* Barra do browser */}
                   <div className="absolute top-0 left-0 right-0 h-6 bg-gray-800 border-b border-azul-cosmo/20 flex items-center px-3 z-10">
                     <div className="flex gap-1.5">
@@ -91,7 +91,7 @@ export default function Projects() {
                     <img 
                       src={p.imagem} 
                       alt={p.nome} 
-                      className="w-full h-full object-contain transition-transform hover:scale-105 duration-300" 
+                      className="w-full h-full object-cover transition-transform hover:scale-105 duration-300" 
                     />
                   </div>
                 </div>
@@ -103,7 +103,7 @@ export default function Projects() {
                 <p className="text-gray-300 mt-2 flex-grow">{p.descricao}</p>
                 
                 {/* Tecnologias */}
-                <div className="flex flex-wrap gap-2 mt-3">
+                <div className="flex flex-wrap mt-3">
                   {p.tecnologias.map((t, i) => (
                     <span key={i} className="px-3 py-1 text-sm rounded-full bg-azul-cosmo/20 text-azul-cosmo border border-azul-cosmo/40">
                       {t}
@@ -112,7 +112,7 @@ export default function Projects() {
                 </div>
                 
                 {/* Ícones */}
-                <div className="flex gap-4 mt-4 text-lg">
+                <div className="flex gap-4 mt-10 text-lg">
                   {p.github && (
                     <a href={p.github} target="_blank" rel="noopener noreferrer" className="hover:text-azul-cosmo transition transform hover:scale-110">
                       <FaGithub />

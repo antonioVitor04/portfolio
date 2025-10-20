@@ -71,8 +71,7 @@ export default function Hero() {
               </defs>
             </svg>
             
-            {/* Efeito de brilho externo - ajustado para o novo tamanho */}
-            <div className="absolute -inset-4 rounded-[30%] blur-3xl opacity-40" style={{ background: 'radial-gradient(circle at 30% 20%, rgba(96,165,250,0.6), transparent 30%)' }} />
+           
           </div>
         </div>
       </div>
