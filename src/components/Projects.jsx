@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaGithub, FaLinkedin, FaFigma } from 'react-icons/fa'
+import { FiGitlab } from "react-icons/fi";
 
 const projetos = [
     {
@@ -11,6 +12,7 @@ const projetos = [
         imagem: '/images/projeto1.png',
         tecnologias: ['Java', 'MySQL', 'Astah', 'NetBeans', 'Git', 'GitHub'],
         github: 'https://github.com/antonioVitor04/PII_1S_2024',
+        gitlab: '',
         linkedin: 'https://linkedin.com'
     },
     {
@@ -22,6 +24,7 @@ const projetos = [
         imagem: '/images/projeto2.png',
         tecnologias: ['Node.js', 'MongoDB', 'Javascript', 'Html', 'CSS', 'Git', 'GitHub'],
         github: 'https://github.com/antonioVitor04/O-Semeador-',
+        gitlab: '',
         linkedin: 'https://linkedin.com'
     },
     {
@@ -33,6 +36,7 @@ const projetos = [
         imagem: '/images/projetosla.jpeg',
         tecnologias: ['React', 'Tailwind', 'Node.js', 'Javascript', 'Vite', 'MongoDB', 'MSal', 'Python', 'Azure', 'Figma', 'Git', 'GitHub'],
         github: 'https://github.com/antonioVitor04/S3-Site-MauaEsports',
+        gitlab: '',
         linkedin: 'https://linkedin.com'
     },
     {
@@ -43,7 +47,8 @@ const projetos = [
         ano: '2025',
         imagem: '/images/projeto4.png',
         tecnologias: ['Unity', 'C#', 'Git', 'GitLab'],
-        github: 'https://gitlab.com/nawatparty_temp/NawatParty',
+        github: '',
+        gitlab: 'https://gitlab.com/nawatparty_temp/NawatParty',
         linkedin: 'https://linkedin.com'
     },
     {
@@ -55,6 +60,7 @@ const projetos = [
         imagem: '/images/projeto5.png',
         tecnologias: ['React', 'Tailwind', 'Node.js', 'Javascript', 'Vite', 'Git', 'GitHub'],
         github: 'https://github.com/antonioVitor04/portfolio',
+        gitlab: '',
         linkedin: 'https://linkedin.com'
     }
 ]
@@ -116,6 +122,11 @@ export default function Projects() {
                   {p.github && (
                     <a href={p.github} target="_blank" rel="noopener noreferrer" className="hover:text-azul-cosmo transition transform hover:scale-110">
                       <FaGithub />
+                    </a>
+                  )}
+                  {p.gitlab && (
+                    <a href={p.gitlab} target="_blank" rel="noopener noreferrer" className="hover:text-azul-cosmo transition transform hover:scale-110">
+                      <FiGitlab />
                     </a>
                   )}
                   {p.figma && (

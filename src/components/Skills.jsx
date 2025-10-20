@@ -15,6 +15,7 @@ import azureIcon from '../assets/icons/azure.svg';
 import trelloIcon from '../assets/icons/trello.svg';
 import wordIcon from '../assets/icons/word.svg';
 import notionIcon from '../assets/icons/notion.svg';
+import gitlabIcon from '../assets/icons/gitlab.svg';
 
 const skills = [
   { name: 'JavaScript', icon: javascriptIcon },
@@ -25,6 +26,7 @@ const skills = [
   { name: 'Tailwind CSS', icon: tailwindIcon },
   { name: 'Vite', icon: viteIcon },
   { name: 'GitHub', icon: githubIcon },
+  { name: 'GitLab', icon: gitlabIcon },
   { name: 'Figma', icon: figmaIcon },
   { name: 'MySQL', icon: mysqlIcon },
   { name: 'MongoDB', icon: mongodbIcon },
