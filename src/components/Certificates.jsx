@@ -1,4 +1,5 @@
 import React from 'react'
+import { useIntersectionObserver } from '../hooks/UseIntersectionObserver';
 
 const certificates = [
   {
@@ -76,16 +77,36 @@ const certificates = [
 ]
 
 export default function Certificates() {
+  const [ref, isVisible] = useIntersectionObserver()
+
   return (
-    <section className="py-24" id="certificates">
-      <div className="max-w-6xl mx-auto px-6"> {/* largura padronizada */}
-        <h2 className="text-4xl font-bold text-azul-cosmo mb-8">Certificates</h2>
+    <section ref={ref} className="py-24" id="certificates">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className={`text-4xl font-bold text-azul-cosmo mb-8 transition-all duration-300 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+        }`}>
+          Certificates
+        </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {certificates.map((c) => (
-            <div key={c.id} className="relative bg-black/30 backdrop-blur-md rounded-2xl overflow-hidden p-6 hover:scale-[1.02] transition">
+          {certificates.map((c, index) => (
+            <div 
+              key={c.id} 
+              className={`relative bg-black/30 backdrop-blur-md rounded-2xl overflow-hidden p-6 
+                         hover:scale-[1.03] transition-all duration-150 
+                         border border-transparent hover:border-azul-cosmo/40 hover:shadow-lg hover:shadow-azul-cosmo/10
+                         ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+              style={{
+                transitionDelay: isVisible ? `${index * 50}ms` : '0ms',
+                animationDelay: isVisible ? `${index * 50}ms` : '0ms'
+              }}
+            >
               <div className="pb-10">
                 <div className="flex items-center gap-4">
-                  <img src={c.imagem} alt={c.instituicao} className="w-14 h-14 object-contain rounded-2xl" />
+                  <img 
+                    src={c.imagem} 
+                    alt={c.instituicao} 
+                    className="w-14 h-14 object-contain rounded-2xl transition-transform duration-100 hover:scale-110" 
+                  />
                   <div>
                     <h3 className="font-bold text-lg">{c.nome}</h3>
                     <p className="text-sm text-gray-400">{c.instituicao} — {c.ano}</p>
@@ -93,7 +114,14 @@ export default function Certificates() {
                 </div>
                 <p className="mt-4 text-gray-300">{c.descricao}</p>
               </div>
-              <a href={c.link} target="_blank" className="absolute bottom-6 left-6 text-azul-cosmo hover:underline">Ver certificado →</a>
+              <a 
+                href={c.link} 
+                target="_blank" 
+                className="absolute bottom-6 left-6 text-azul-cosmo hover:underline 
+                           transition-all duration-100 hover:translate-x-1 font-semibold" 
+              >
+                Ver certificado →
+              </a>
             </div>
           ))}
         </div>

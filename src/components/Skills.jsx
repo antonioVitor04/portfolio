@@ -16,6 +16,8 @@ import trelloIcon from '../assets/icons/trello.svg';
 import wordIcon from '../assets/icons/word.svg';
 import notionIcon from '../assets/icons/notion.svg';
 import gitlabIcon from '../assets/icons/gitlab.svg';
+import { useIntersectionObserver } from '../hooks/UseIntersectionObserver';
+
 
 const skills = [
   { name: 'JavaScript', icon: javascriptIcon },
@@ -38,18 +40,53 @@ const skills = [
 ];
 
 export default function Skills() {
+  const [ref, isVisible] = useIntersectionObserver()
+
+  const rows = [];
+  for (let i = 0; i < skills.length; i += 3) {
+    rows.push(skills.slice(i, i + 3));
+  }
+
   return (
-    <section className="py-24" id="skills">
+    <section ref={ref} className="py-24" id="skills">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-azul-cosmo mb-8">Skills</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-          {skills.map((s, idx) => (
-            <div
-              key={idx}
-              className="p-6 rounded-xl bg-gradient-to-br from-black/20 to-white/3 backdrop-blur-md hover:scale-105 transition flex flex-col items-center"
-            >
-              <img src={s.icon} alt={s.name} className="w-10 h-10 mb-3 " />
-              <div className="font-semibold text-center">{s.name}</div>
+        <h2 className={`text-4xl font-bold text-azul-cosmo mb-8 transition-all duration-300 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+        }`}>
+          Skills
+        </h2>
+        
+        <div className="space-y-3">
+          {rows.map((row, rowIndex) => (
+            <div key={rowIndex} className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {row.map((skill, skillIndex) => {
+                const overallIndex = rowIndex * 3 + skillIndex;
+                return (
+                  <div
+                    key={skill.name}
+                    className={`p-6 rounded-xl bg-gradient-to-br from-black/20 to-white/3 
+                             backdrop-blur-md hover:scale-105 transition-all duration-150 
+                             flex flex-col items-center border border-transparent hover:border-azul-cosmo/40
+                             hover:shadow-md hover:shadow-azul-cosmo/10 group
+                             ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+                    style={{
+                      transitionDelay: isVisible ? `${rowIndex * 100 + skillIndex * 50}ms` : '0ms',
+                      animationDelay: isVisible ? `${rowIndex * 100 + skillIndex * 50}ms` : '0ms'
+                    }}
+                  >
+                    <img 
+                      src={skill.icon} 
+                      alt={skill.name} 
+                      className="w-10 h-10 mb-3 transition-all duration-100 
+                               group-hover:scale-110 group-hover:rotate-6" 
+                    />
+                    <div className="font-semibold text-center transition-all duration-100 
+                                  group-hover:text-azul-cosmo">
+                      {skill.name}
+                    </div>
+                  </div>
+                )
+              })}
             </div>
           ))}
         </div>

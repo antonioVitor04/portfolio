@@ -1,14 +1,15 @@
 import React from 'react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
+import { Link } from 'react-scroll'
 
 export default function Hero() {
   return (
-    <section className="min-h-[80vh] flex items-center justify-center pt-20">
+    <section id="home" className="min-h-[80vh] flex items-center justify-center pt-20">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         <div>
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-azul-cosmo">
-            Olá, sou <span className="text-white block">Antônio Vítor</span>
+            Olá, sou <span className="text-white block">Antônio Vítor Bozzo</span>
           </h1>
 
           <p className="mt-4 text-lg text-gray-300">
@@ -28,12 +29,15 @@ export default function Hero() {
             >
               Contato <MdEmail />
             </a>
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 transition"
+            <Link
+              to="projects"
+              smooth={true}
+              duration={600}
+              offset={-70}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 transition cursor-pointer"
             >
               Ver projetos
-            </a>
+            </Link>
           </div>
 
           <div className="flex gap-5 mt-6 text-2xl">
