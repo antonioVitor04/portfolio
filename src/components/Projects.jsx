@@ -13,7 +13,7 @@ const projetos = [
         tecnologias: ['Java', 'MySQL', 'Astah', 'NetBeans', 'Git', 'GitHub'],
         github: 'https://github.com/antonioVitor04/PII_1S_2024',
         gitlab: '',
-        linkedin: 'https://linkedin.com'
+        linkedin: 'https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/details/projects/'
     },
     {
         id: 2,
@@ -25,7 +25,7 @@ const projetos = [
         tecnologias: ['Node.js', 'MongoDB', 'Javascript', 'Html', 'CSS', 'Git', 'GitHub'],
         github: 'https://github.com/antonioVitor04/O-Semeador-',
         gitlab: '',
-        linkedin: 'https://linkedin.com'
+        linkedin: 'https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/details/projects/'
     },
     {
         id: 3,
@@ -37,7 +37,7 @@ const projetos = [
         tecnologias: ['React', 'Tailwind', 'Node.js', 'Javascript', 'Vite', 'MongoDB', 'MSal', 'Python', 'Azure', 'Figma', 'Git', 'GitHub'],
         github: 'https://github.com/antonioVitor04/S3-Site-MauaEsports',
         gitlab: '',
-        linkedin: 'https://linkedin.com'
+        linkedin: 'https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/details/projects/'
     },
     {
         id: 4,
@@ -61,7 +61,7 @@ const projetos = [
         tecnologias: ['React', 'Tailwind', 'Node.js', 'Javascript', 'Vite', 'Git', 'GitHub'],
         github: 'https://github.com/antonioVitor04/portfolio',
         gitlab: '',
-        linkedin: 'https://linkedin.com'
+        linkedin: 'https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/details/projects/'
     }
 ]
 
