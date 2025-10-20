@@ -49,7 +49,7 @@ const projetos = [
         tecnologias: ['Unity', 'C#', 'Git', 'GitLab'],
         github: '',
         gitlab: 'https://gitlab.com/nawatparty_temp/NawatParty',
-        linkedin: 'https://linkedin.com'
+        linkedin: ''
     },
     {
         id: 5,
