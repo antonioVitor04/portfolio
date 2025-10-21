@@ -26,6 +26,7 @@ const projetos = [
         tecnologias: ['Node.js', 'MongoDB', 'Javascript', 'Html', 'CSS', 'Git', 'GitHub'],
         github: 'https://github.com/antonioVitor04/O-Semeador-',
         gitlab: '',
+        figma:'https://www.figma.com/design/WX7SQFNwLEEgXOyGXmywAH/Projeto-Integrador---O-Semeador?node-id=0-1&p=f&t=JIWX1EAk9gK6dqsI-0',
         linkedin: 'https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/details/projects/'
     },
     {
@@ -38,6 +39,7 @@ const projetos = [
         tecnologias: ['React', 'Tailwind', 'Node.js', 'Javascript', 'Vite', 'MongoDB', 'MSal', 'Python', 'Azure', 'Figma', 'Git', 'GitHub'],
         github: 'https://github.com/antonioVitor04/S3-Site-MauaEsports',
         gitlab: '',
+        figma: 'https://www.figma.com/design/LuwuqQ4VbyyILJQK0vf7Oo/S3-Site-MauaEsports?node-id=0-1&p=f&t=E8qiStQmD3MsXgQ4-0',
         linkedin: 'https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/details/projects/'
     },
     {

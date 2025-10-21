@@ -1,9 +1,66 @@
-import React, { useState } from 'react'
-import { Link } from 'react-scroll'
+import React, { useState, useEffect } from 'react'
+import { Link, Events } from 'react-scroll'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
+  const [isSmoothScrolling, setIsSmoothScrolling] = useState(false)
+
+  useEffect(() => {
+    const sections = ['home', 'skills', 'projects', 'certificates']
+    let ticking = false
+
+    const handleScroll = () => {
+      if (isSmoothScrolling || ticking) return
+      ticking = true
+
+      requestAnimationFrame(() => {
+        const scrollPosition = window.scrollY + 100 // Offset para a navbar
+        let currentSection = 'home'
+
+        for (let i = 0; i < sections.length; i++) {
+          const section = document.getElementById(sections[i])
+          const nextSection = sections[i + 1] ? document.getElementById(sections[i + 1]) : null
+          const sectionTop = section?.offsetTop || 0
+          const nextSectionTop = nextSection?.offsetTop || (document.documentElement.scrollHeight)
+
+          if (scrollPosition >= sectionTop && scrollPosition < nextSectionTop) {
+            currentSection = sections[i]
+            break
+          }
+        }
+
+        setActiveSection(currentSection)
+        ticking = false
+      })
+    }
+
+    // Registrar eventos para smooth scroll
+    const handleScrollBegin = (to) => {
+      setActiveSection(to)
+      setIsSmoothScrolling(true)
+    }
+
+    const handleScrollEnd = () => {
+      // Pequeno delay para permitir a mudança instantânea sem transição
+      setTimeout(() => {
+        setIsSmoothScrolling(false)
+      }, 50)
+    }
+
+    Events.scrollEvent.register('begin', handleScrollBegin)
+    Events.scrollEvent.register('end', handleScrollEnd)
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Executa inicialmente
+
+    return () => {
+      Events.scrollEvent.remove('begin')
+      Events.scrollEvent.remove('end')
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [isSmoothScrolling])
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -13,6 +70,41 @@ export default function Navbar() {
     setIsMenuOpen(false)
   }
 
+  const NavLink = ({ to, children, className, mobile = false }) => {
+    const isActive = activeSection === to
+    const baseClass = mobile 
+      ? "text-2xl font-bold nav-link transition-all duration-300 cursor-pointer py-2 px-6 transform hover:scale-110"
+      : "relative nav-link cursor-pointer transition-all duration-300 group font-semibold text-sm lg:text-base"
+
+    const colorClass = isActive 
+      ? 'text-azul-cosmo' 
+      : (mobile ? 'text-gray-200 hover:text-azul-cosmo' : 'text-gray-200 hover:text-azul-cosmo')
+
+    return (
+      <Link
+        to={to}
+        smooth={true}
+        duration={600}
+        offset={-70}
+        onClick={mobile ? closeMenu : undefined}
+        className={`${baseClass} ${colorClass} ${className || ''}`}
+      >
+        {mobile ? (
+          children
+        ) : (
+          <>
+            <span className="relative z-10">{children}</span>
+            <span 
+              className={`absolute bottom-0 left-0 w-0 h-0.5 bg-azul-cosmo transition-all duration-300 origin-left ${
+                isActive ? 'w-full' : 'group-hover:w-full'
+              }`}
+            ></span>
+          </>
+        )}
+      </Link>
+    )
+  }
+
   return (
     <header className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur border-b border-white/10">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -20,21 +112,12 @@ export default function Navbar() {
         <img src='logos/avb_logo.png' className="h-8 md:h-10 w-auto" alt="Logo" />
         
         {/* Menu Desktop */}
-        <ul className="hidden md:flex gap-6 lg:gap-8 text-gray-200 font-medium">
+        <ul className={`hidden md:flex gap-6 lg:gap-8 font-medium ${isSmoothScrolling ? 'smooth-scrolling' : ''}`}>
           {['home', 'skills', 'projects', 'certificates'].map((item) => (
             <li key={item}>
-              <Link
-                to={item}
-                smooth={true}
-                duration={600}
-                offset={-70}
-                className="relative cursor-pointer hover:text-azul-cosmo transition-all duration-300 group font-semibold text-sm lg:text-base"
-              >
-                <span className="relative z-10">
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
-                </span>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-azul-cosmo transition-all duration-300 group-hover:w-full origin-left"></span>
-              </Link>
+              <NavLink to={item}>
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -60,19 +143,9 @@ export default function Navbar() {
             ${isMenuOpen ? 'translate-y-0' : 'translate-y-8'}
           `}>
             {['home', 'skills', 'projects', 'certificates'].map((item) => (
-              <Link
-                key={item}
-                to={item}
-                smooth={true}
-                duration={600}
-                offset={-70}
-                onClick={closeMenu}
-                className="text-2xl font-bold text-gray-200 hover:text-azul-cosmo 
-                         transition-all duration-300 cursor-pointer py-2 px-6
-                         transform hover:scale-110"
-              >
+              <NavLink key={item} to={item} mobile={true}>
                 {item.charAt(0).toUpperCase() + item.slice(1)}
-              </Link>
+              </NavLink>
             ))}
           </div>
 

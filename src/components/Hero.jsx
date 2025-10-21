@@ -7,25 +7,33 @@ export default function Hero() {
   return (
     <section id="home" className="min-h-[80vh] flex items-center justify-center pt-20">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        {/* Texto */}
         <div>
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-azul-cosmo">
             Olá, sou <span className="text-white block">Antônio Vítor Bozzo</span>
           </h1>
 
-          <p className="mt-4 text-lg text-gray-300">
-            Estudante de <span className="text-white font-semibold">Ciência da Computação</span> no Instituto Mauá de Tecnologia. 
-            Tenho experiência em <span className="text-white font-semibold">JavaScript (React/Next), Python, Java, SQL e MongoDB</span>, 
-            e gosto de criar interfaces acessíveis, sistemas eficientes e relatórios técnicos que impulsionam qualidade e inovação.  
+          <h2 className="mt-2 text-4xl md:text-5xl font-bold text-white tracking-wide">
+            <span className="text-azul-cosmo/90">Desenvolvedor Full-Stack</span>
+          </h2>
+
+          <p className="mt-6 text-lg text-gray-300">
+            Sou <span className="font-semibold text-white">responsável, dedicado, proativo e analítico</span>, 
+            com sólida experiência em <span className="font-semibold text-white">JavaScript (React/Next.js), Python, Java, SQL e MongoDB</span>. 
+            Tenho paixão por criar <span className="font-semibold text-white">interfaces acessíveis</span> e 
+            <span className="font-semibold text-white"> sistemas escaláveis</span> que entregam resultados de alta qualidade.
           </p>
 
           <p className="mt-3 text-lg text-gray-300">
-            Sou uma pessoa <span className="text-white font-semibold">proativa, analítica e colaborativa</span>, com foco em qualidade, aprender e aplicar tecnologia para aprimorar processos e gerar impacto real.
+            Gosto de trabalhar em equipe, aprender novas tecnologias e aplicar soluções eficientes que 
+            agregam valor real aos projetos e impulsionam inovação.
           </p>
 
+          {/* Botões */}
           <div className="mt-6 flex gap-4">
             <a
               href="mailto:antonionapoli394@gmail.com"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-azul-cosmo/90 hover:scale-105 transition"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-azul-cosmo/90 hover:scale-105 transition transform font-medium"
             >
               Contato <MdEmail />
             </a>
@@ -34,30 +42,34 @@ export default function Hero() {
               smooth={true}
               duration={600}
               offset={-70}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 transition cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 transition cursor-pointer font-medium"
             >
               Ver projetos
             </Link>
           </div>
 
+          {/* Ícones */}
           <div className="flex gap-5 mt-6 text-2xl">
             <a
               href="https://github.com/antonioVitor04"
               target="_blank"
               rel="noopener noreferrer"
+              className="hover:text-azul-cosmo transition"
             >
-              <FaGithub className="hover:text-azul-cosmo transition" />
+              <FaGithub />
             </a>
             <a
               href="https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/"
               target="_blank"
               rel="noopener noreferrer"
+              className="hover:text-azul-cosmo transition"
             >
-              <FaLinkedin className="hover:text-azul-cosmo transition" />
+              <FaLinkedin />
             </a>
           </div>
         </div>
 
+        {/* Imagem Blob */}
         <div className="flex justify-center md:justify-end">
           <div className="relative w-80 h-80 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem]">
             <svg

@@ -22,6 +22,8 @@ body {
   font-family: 'Space Grotesk', system-ui, sans-serif;
 }
 
+
+
 /* Utility colors for tailwind usage */
 .bg-portfolio-bg { background: transparent; }
 .text-azul-cosmo { color: var(--azul-cosmo); }
@@ -206,6 +208,15 @@ body {
 
 .animate-pulse-green {
   animation: pulse-slow 2s ease-in-out 0.6s infinite;
+}
+
+/* ===== ESTILOS PARA SMOOTH SCROLLING (SEM ANIMAÇÃO) ===== */
+.smooth-scrolling .nav-link {
+  transition: none !important;
+}
+
+.smooth-scrolling .nav-link span:last-child {
+  transition: none !important;
 }
 
 /* ===== CORREÇÃO DOS DELAYS - SOLUÇÃO DEFINITIVA ===== */
