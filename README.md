@@ -5,14 +5,9 @@
 
 ## 🛠 Tecnologias
 
-<div align="center">
-
-| | | | |
-|:---:|:---:|:---:|:---:|
 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" width="50"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" width="50"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" width="50"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" width="50"/> |
 | **React** | **Tailwind** | **Vite** | **Node.js** |
 
-</div>
 
 ## 📊 Estatísticas
 
