@@ -1,5 +1,5 @@
 import React from 'react'
-import { useIntersectionObserver } from '../hooks/UseIntersectionObserver';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const certificates = [
   {
