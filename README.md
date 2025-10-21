@@ -1,16 +1,32 @@
-# React + Vite
+<!--TÍTULO-->
+# Portfólio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+<!--DESCRIÇÃO-->
+> Eai, quer me conhecer um pouco melhor? Segue o link ai https://antoniovitorbozzo.vercel.app/.<br/>
+> O portfólio apresenta informações sobre mim, minhas habilidades, projetos, certificados e formas de contato.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<!--TECNOLOGIAS-->
+## Tecnologias
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" width="40"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" width="40"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" width="40"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" width="40"/> |
 
-## Expanding the ESLint configuration
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | 
+| React                                                                                                      | Tailwind CSS                                                                                                            | Vite                                                                                                         | Node.js                                                                                                                                                                      |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+
+
+
+<!--ESTATÍSTICAS-->
+## Estatísticas
+![](https://visitor-badge.laobi.icu/badge?page_id=antonioVitor04.portfolio)
+![Tamanho do Repositório](https://img.shields.io/github/repo-size/antonioVitor04/portfolio)
+![Linguagens](https://img.shields.io/github/languages/top/antonioVitor04/portfolio)
+
+
+<!--LICENÇA-->
+## Licença
+[Veja a licença](https://github.com/VictorHugo-7/S3-Site-MauaEsports?tab=License-1-ov-file)
