@@ -14,7 +14,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-black/30 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur border-b border-white/10">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <img src='logos/avb_logo.png' className="h-8 md:h-10 w-auto" alt="Logo" />
