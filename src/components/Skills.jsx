@@ -16,7 +16,7 @@ import trelloIcon from '../assets/icons/trello.svg';
 import wordIcon from '../assets/icons/word.svg';
 import notionIcon from '../assets/icons/notion.svg';
 import gitlabIcon from '../assets/icons/gitlab.svg';
-import { useIntersectionObserver } from '../hooks/UseIntersectionObserver';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 
 const skills = [

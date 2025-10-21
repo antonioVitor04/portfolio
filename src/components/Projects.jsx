@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaGithub, FaLinkedin, FaFigma } from 'react-icons/fa'
 import { FiGitlab } from "react-icons/fi";
-import { useIntersectionObserver } from '../hooks/UseIntersectionObserver';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const projetos = [
     {
