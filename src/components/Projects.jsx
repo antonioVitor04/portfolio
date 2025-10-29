@@ -20,7 +20,7 @@ const projetos = [
         id: 2,
         nome: 'Site | O Semeador',
         descricao:
-            'Site informativo de instituição beneficente com objetivo de atrair novos doadores potenciasi e divulgar a instituição beneficente, com integração com API do V Libras, em que o site pode ser lido por voz ou libras em prol da acessibilidade',
+            'Site informativo de instituição beneficente com objetivo de atrair novos doadores potenciais e divulgar a instituição beneficente, com integração com API do V Libras, em que o site pode ser lido por voz ou libras em prol da acessibilidade',
         ano: '2024',
         imagem: '/images/projeto2.png',
         tecnologias: ['Node.js', 'MongoDB', 'Javascript', 'Html', 'CSS', 'Git', 'GitHub'],
@@ -46,7 +46,7 @@ const projetos = [
         id: 4,
         nome: 'Jogo | acompanhando o ritmo',
         descricao:
-            'Serão apresentadas sequências movimentos, demonstradas por um boneco na cena, que os jogadores deverão repetir. Quanto mais fiel e preciso for o jogador ao acompanhar os movimentos do boneco, mais pontos ele receberá. Com o avanço do jogo, o número de notas e movimentos aumenta, enquanto o tempo entre cada ação diminui, tornando o desafio progressivamente mais difícil.',
+            'Serão apresentadas sequências de movimentos, demonstradas por um boneco na cena, que os jogadores deverão repetir. Quanto mais fiel e preciso for o jogador ao acompanhar os movimentos do boneco, mais pontos ele receberá. Com o avanço do jogo, o número de notas e movimentos aumenta, enquanto o tempo entre cada ação diminui, tornando o desafio progressivamente mais difícil.',
         ano: '2025',
         imagem: '/images/projeto4.png',
         tecnologias: ['Unity', 'C#', 'Git', 'GitLab'],
