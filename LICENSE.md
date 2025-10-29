@@ -1,0 +1,4 @@
+© 2025 Todos Direitos Reservados. Antônio Vítor Bozzo de Napoli.
+Este software e sua respectiva documentação pertencem exclusivamente a Antônio Vítor Bozo de Napoli e estão protegidos pelas leis de direitos autorais.
+
+Este software é protegido por direitos autorais e seu uso está sujeito a restrições específicas. Qualquer alteração no código-fonte ou na estrutura do software é proibida sem a autorização expressa do proprietário, Antônio Vítor Bozo de Napoli. A reprodução total ou parcial do software, seja para distribuição ou uso pessoal, não é permitida. Além disso, o software não pode ser divulgado, distribuído ou disponibilizado publicamente sem a permissão do proprietário. A venda, aluguel ou qualquer forma de exploração comercial do software também é restrita. O software está protegido por leis de direitos autorais, e qualquer uso não autorizado pode resultar em consequências legais.
