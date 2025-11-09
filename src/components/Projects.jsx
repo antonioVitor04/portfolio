@@ -2,85 +2,86 @@ import React from 'react'
 import { FaGithub, FaLinkedin, FaFigma } from 'react-icons/fa'
 import { FiGitlab } from "react-icons/fi";
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-
-const projetos = [
-    {
-        id: 1,
-        nome: 'Jogo | Memória encantada',
-        descricao:
-            'Memória encantada é um jogo em que o aluno seleciona duas cartas por vez. Quando as cartas são iguais, elas desaparecem do tabuleiro. O tempo de conclusão é registrado para cada aluno, e ao final é gerado um ranking baseado no desempenho.',
-        ano: '2024',
-        imagem: '/images/projeto1.png',
-        tecnologias: ['Java', 'MySQL', 'Astah', 'NetBeans', 'Git', 'GitHub'],
-        github: 'https://github.com/antonioVitor04/PII_1S_2024',
-        gitlab: '',
-        linkedin: 'https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/details/projects/'
-    },
-    {
-        id: 2,
-        nome: 'Site | O Semeador',
-        descricao:
-            'Site informativo de instituição beneficente com objetivo de atrair novos doadores potenciais e divulgar a instituição beneficente, com integração com API do V Libras, em que o site pode ser lido por voz ou libras em prol da acessibilidade',
-        ano: '2024',
-        imagem: '/images/projeto2.png',
-        tecnologias: ['Node.js', 'MongoDB', 'Javascript', 'Html', 'CSS', 'Git', 'GitHub'],
-        github: 'https://github.com/antonioVitor04/O-Semeador-',
-        gitlab: '',
-        figma:'https://www.figma.com/design/WX7SQFNwLEEgXOyGXmywAH/Projeto-Integrador---O-Semeador?node-id=0-1&p=f&t=JIWX1EAk9gK6dqsI-0',
-        linkedin: 'https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/details/projects/'
-    },
-    {
-        id: 3,
-        nome: 'Site | Mauá Esports',
-        descricao:
-            'O site consiste em centralizar e facilitar a administração das atividades esportivas, incluindo a gestão dos horários de treino, das horas PAE dos alunos(em formato de ranking) e das informações sobre os times e campeonatos, com exportação de relatórios (Excel e PDF) em Python.',
-        ano: '2025',
-        imagem: '/images/projetosla.jpeg',
-        tecnologias: ['React', 'Tailwind', 'Node.js', 'Javascript', 'Vite', 'MongoDB', 'MSal', 'Python', 'Azure', 'Figma', 'Git', 'GitHub'],
-        github: 'https://github.com/antonioVitor04/S3-Site-MauaEsports',
-        gitlab: '',
-        figma: 'https://www.figma.com/design/LuwuqQ4VbyyILJQK0vf7Oo/S3-Site-MauaEsports?node-id=0-1&p=f&t=E8qiStQmD3MsXgQ4-0',
-        linkedin: 'https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/details/projects/'
-    },
-    {
-        id: 4,
-        nome: 'Site/Android app | Sistema para professores',
-        descricao:
-            'O Site/App consiste em um sistema de gestão acadêmica multiplataforma utilizando Flutter e Dart, com funcionalidades de gerenciamento de alunos, professores e notas. Implementação de um sistema interno de mensagens e um módulo de controle de materiais das disciplinas, garantindo comunicação eficiente e boa usabilidade tanto em ambientes web quanto Android',
-        ano: '2025',
-        imagem: '/images/projeto6.png',
-        tecnologias: ['Flutter', 'Dart', 'Node.js', 'Javascript', 'MongoDB', 'Figma', 'Git', 'GitHub'],
-        github: 'https://github.com/antonioVitor04/S4-Poliedro-Sistema-Para-Professores',
-        gitlab: ''
-    },
-    {
-        id: 5,
-        nome: 'Jogo | acompanhando o ritmo',
-        descricao:
-            'Serão apresentadas sequências de movimentos, demonstradas por um boneco na cena, que os jogadores deverão repetir. Quanto mais fiel e preciso for o jogador ao acompanhar os movimentos do boneco, mais pontos ele receberá. Com o avanço do jogo, o número de notas e movimentos aumenta, enquanto o tempo entre cada ação diminui, tornando o desafio progressivamente mais difícil.',
-        ano: '2025',
-        imagem: '/images/projeto4.png',
-        tecnologias: ['Unity', 'C#', 'Git', 'GitLab'],
-        github: '',
-        gitlab: 'https://gitlab.com/nawatparty_temp/NawatParty',
-        linkedin: ''
-    },
-    {
-        id: 6,
-        nome: 'Site | Portfolio',
-        descricao:
-            'O portfólio apresenta minhas informações pessoais em uma interface limpa e organizada',
-        ano: '2025',
-        imagem: '/images/projeto5.png',
-        tecnologias: ['React', 'Tailwind', 'Node.js', 'Javascript', 'Vite', 'Git', 'GitHub'],
-        github: 'https://github.com/antonioVitor04/portfolio',
-        gitlab: '',
-        linkedin: 'https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/details/projects/'
-    }
-]
+import { useTranslation } from '../contexts/LanguageContext';
 
 export default function Projects() {
   const [ref, isVisible] = useIntersectionObserver()
+  const { t } = useTranslation()
+
+  const projetos = [
+    {
+      id: 1,
+      nome: t('project1Name'),
+      descricao: t('project1Desc'),
+      ano: '2024',
+      imagem: '/images/projeto1.png',
+      tecnologias: ['Java', 'MySQL', 'Astah', 'NetBeans', 'Git', 'GitHub'],
+      github: 'https://github.com/antonioVitor04/PII_1S_2024',
+      gitlab: '',
+      figma: '',
+      linkedin: 'https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/details/projects/'
+    },
+    {
+      id: 2,
+      nome: t('project2Name'),
+      descricao: t('project2Desc'),
+      ano: '2024',
+      imagem: '/images/projeto2.png',
+      tecnologias: ['Node.js', 'MongoDB', 'Javascript', 'Html', 'CSS', 'Git', 'GitHub'],
+      github: 'https://github.com/antonioVitor04/O-Semeador-',
+      gitlab: '',
+      figma: 'https://www.figma.com/design/WX7SQFNwLEEgXOyGXmywAH/Projeto-Integrador---O-Semeador?node-id=0-1&p=f&t=JIWX1EAk9gK6dqsI-0',
+      linkedin: 'https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/details/projects/'
+    },
+    {
+      id: 3,
+      nome: t('project3Name'),
+      descricao: t('project3Desc'),
+      ano: '2025',
+      imagem: '/images/projetosla.jpeg',
+      tecnologias: ['React', 'Tailwind', 'Node.js', 'Javascript', 'Vite', 'MongoDB', 'MSal', 'Python', 'Azure', 'Figma', 'Git', 'GitHub'],
+      github: 'https://github.com/antonioVitor04/S3-Site-MauaEsports',
+      gitlab: '',
+      figma: 'https://www.figma.com/design/LuwuqQ4VbyyILJQK0vf7Oo/S3-Site-MauaEsports?node-id=0-1&p=f&t=E8qiStQmD3MsXgQ4-0',
+      linkedin: 'https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/details/projects/'
+    },
+    {
+      id: 4,
+      nome: t('project4Name'),
+      descricao: t('project4Desc'),
+      ano: '2025',
+      imagem: '/images/projeto6.png',
+      tecnologias: ['Flutter', 'Dart', 'Node.js', 'Javascript', 'MongoDB', 'Figma', 'Git', 'GitHub'],
+      github: 'https://github.com/antonioVitor04/S4-Poliedro-Sistema-Para-Professores',
+      gitlab: '',
+      figma: '',
+      linkedin: ''
+    },
+    {
+      id: 5,
+      nome: t('project5Name'),
+      descricao: t('project5Desc'),
+      ano: '2025',
+      imagem: '/images/projeto4.png',
+      tecnologias: ['Unity', 'C#', 'Git', 'GitLab'],
+      github: '',
+      gitlab: 'https://gitlab.com/nawatparty_temp/NawatParty',
+      figma: '',
+      linkedin: ''
+    },
+    {
+      id: 6,
+      nome: t('project6Name'),
+      descricao: t('project6Desc'),
+      ano: '2025',
+      imagem: '/images/projeto5.png',
+      tecnologias: ['React', 'Tailwind', 'Node.js', 'Javascript', 'Vite', 'Git', 'GitHub'],
+      github: 'https://github.com/antonioVitor04/portfolio',
+      gitlab: '',
+      figma: '',
+      linkedin: 'https://www.linkedin.com/in/ant%C3%B4nio-v%C3%ADtor-bozzo-de-napoli-2927a0323/details/projects/'
+    }
+  ]
 
   return (
     <section ref={ref} className="py-24" id="projects">
@@ -88,7 +89,7 @@ export default function Projects() {
         <h2 className={`text-4xl font-bold text-azul-cosmo mb-8 transition-all duration-300 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}>
-          Projects
+          {t('projectsTitle')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projetos.map((p, index) => (

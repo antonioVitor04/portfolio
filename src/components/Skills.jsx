@@ -18,9 +18,8 @@ import notionIcon from '../assets/icons/notion.svg';
 import gitlabIcon from '../assets/icons/gitlab.svg';
 import flutterIcon from '../assets/icons/FlutterIcon.png';
 import dartIcon from '../assets/icons/DartIcon.png';
-
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-
+import { useTranslation } from '../contexts/LanguageContext';
 
 const skills = [
   { name: 'JavaScript', icon: javascriptIcon },
@@ -38,7 +37,7 @@ const skills = [
   { name: 'Power BI', icon: powerpointIcon },
   { name: 'Azure', icon: azureIcon },
   { name: 'Scrum', icon: trelloIcon },
-  { name: 'Pacote Office', icon: wordIcon },
+  { name: 'Pacote Office', icon: wordIcon }, // Este será traduzido dinamicamente
   { name: 'Notion', icon: notionIcon },
   { name: 'Dart', icon: dartIcon },
   { name: 'Flutter', icon: flutterIcon },
@@ -46,10 +45,16 @@ const skills = [
 
 export default function Skills() {
   const [ref, isVisible] = useIntersectionObserver()
+  const { t } = useTranslation()
+
+  // Traduz apenas o item necessário
+  const translatedSkills = skills.map(skill => 
+    skill.name === 'Pacote Office' ? { ...skill, name: t('skillsOffice') } : skill
+  )
 
   const rows = [];
-  for (let i = 0; i < skills.length; i += 3) {
-    rows.push(skills.slice(i, i + 3));
+  for (let i = 0; i < translatedSkills.length; i += 3) {
+    rows.push(translatedSkills.slice(i, i + 3));
   }
 
   return (
@@ -58,7 +63,7 @@ export default function Skills() {
         <h2 className={`text-4xl font-bold text-azul-cosmo mb-8 transition-all duration-300 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}>
-          Skills
+          {t('skillsTitle')}
         </h2>
         
         <div className="space-y-3">

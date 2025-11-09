@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Link, Events } from 'react-scroll'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { FaBars, FaTimes, FaGlobe } from 'react-icons/fa'
+import { useTranslation } from '../contexts/LanguageContext'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [isSmoothScrolling, setIsSmoothScrolling] = useState(false)
+  const { t, toggleLanguage, language } = useTranslation()
 
   useEffect(() => {
     const sections = ['home', 'skills', 'projects', 'certificates']
@@ -109,18 +111,31 @@ export default function Navbar() {
     <header className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur border-b border-white/10">
       <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <img src='logos/avb_logo.png' className="h-8 md:h-10 w-auto" alt="Logo" />
+        <img src='/logos/avb_logo.png' className="h-8 md:h-10 w-auto" alt="Logo" />
         
-        {/* Menu Desktop */}
-        <ul className={`hidden md:flex gap-6 lg:gap-8 font-medium ${isSmoothScrolling ? 'smooth-scrolling' : ''}`}>
-          {['home', 'skills', 'projects', 'certificates'].map((item) => (
-            <li key={item}>
-              <NavLink to={item}>
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
+        {/* Wrapper para Menu Desktop + Toggle (alinhado à direita em telas grandes) */}
+        <div className="hidden md:flex items-center gap-8">
+          <ul className={`flex gap-6 lg:gap-8 font-medium ${isSmoothScrolling ? 'smooth-scrolling' : ''}`}>
+            {['home', 'skills', 'projects', 'certificates'].map((item) => (
+              <li key={item}>
+                <NavLink to={item}>
+                  {t(item.charAt(0).toUpperCase() + item.slice(1))}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+
+          {/* Botão Toggle Language - Desktop */}
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-1 p-2 text-gray-200 hover:text-azul-cosmo transition-colors duration-300 rounded-full hover:bg-white/10"
+            aria-label="Toggle language"
+            title="Toggle language"
+          >
+            <FaGlobe size={18} />
+            <span className="text-sm font-medium">{language.toUpperCase()}</span>
+          </button>
+        </div>
 
         {/* Botão Menu Mobile */}
         <button
@@ -144,9 +159,16 @@ export default function Navbar() {
           `}>
             {['home', 'skills', 'projects', 'certificates'].map((item) => (
               <NavLink key={item} to={item} mobile={true}>
-                {item.charAt(0).toUpperCase() + item.slice(1)}
+                {t(item.charAt(0).toUpperCase() + item.slice(1))}
               </NavLink>
             ))}
+            {/* Botão Toggle Language - Mobile (agora mostra idioma atual) */}
+            <button
+              onClick={toggleLanguage}
+              className="text-lg font-bold text-gray-200 hover:text-azul-cosmo transition-colors duration-300 py-2 px-6 rounded-md hover:bg-white/10"
+            >
+              {language.toUpperCase()}
+            </button>
           </div>
 
           {/* Botão Fechar Mobile */}

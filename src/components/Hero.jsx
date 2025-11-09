@@ -2,31 +2,30 @@ import React from 'react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import { Link } from 'react-scroll'
+import { useTranslation } from '../contexts/LanguageContext'
 
 export default function Hero() {
+  const { t } = useTranslation()
+
   return (
     <section id="home" className="min-h-[80vh] flex items-center justify-center pt-20">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         {/* Texto */}
         <div>
           <h1 className="text-5xl md:text-6xl font-extrabold leading-tight text-azul-cosmo">
-            Olá, sou <span className="text-white block">Antônio Vítor Bozzo</span>
+            {t('heroGreeting')} <span className="text-white block">{t('heroName')}</span>
           </h1>
 
           <h2 className="mt-2 text-4xl md:text-5xl font-bold text-white tracking-wide">
-            <span className="text-azul-cosmo/90">Desenvolvedor Full-Stack</span>
+            <span className="text-azul-cosmo/90">{t('heroTitle')}</span>
           </h2>
 
           <p className="mt-6 text-lg text-gray-300">
-            Sou <span className="font-semibold text-white">responsável, dedicado, proativo e analítico</span>, 
-            com sólida experiência em <span className="font-semibold text-white">JavaScript (React/Next.js), Python, Java, SQL e MongoDB</span>. 
-            Tenho paixão por criar <span className="font-semibold text-white">interfaces acessíveis</span> e 
-            <span className="font-semibold text-white"> sistemas escaláveis</span> que entregam resultados de alta qualidade.
+            {t('heroDescription1')}
           </p>
 
           <p className="mt-3 text-lg text-gray-300">
-            Gosto de trabalhar em equipe, aprender novas tecnologias e aplicar soluções eficientes que 
-            agregam valor real aos projetos e impulsionam inovação.
+            {t('heroDescription2')}
           </p>
 
           {/* Botões */}
@@ -35,7 +34,7 @@ export default function Hero() {
               href="mailto:antonionapoli394@gmail.com"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-azul-cosmo/90 hover:scale-105 transition transform font-medium"
             >
-              Contato <MdEmail />
+              {t('contactButton')} <MdEmail />
             </a>
             <Link
               to="projects"
@@ -44,7 +43,7 @@ export default function Hero() {
               offset={-70}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 transition cursor-pointer font-medium"
             >
-              Ver projetos
+              {t('projectsButton')}
             </Link>
           </div>
 
