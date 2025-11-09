@@ -16,6 +16,9 @@ import trelloIcon from '../assets/icons/trello.svg';
 import wordIcon from '../assets/icons/word.svg';
 import notionIcon from '../assets/icons/notion.svg';
 import gitlabIcon from '../assets/icons/gitlab.svg';
+import flutterIcon from '../assets/icons/FlutterIcon.png';
+import dartIcon from '../assets/icons/DartIcon.png';
+
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 
@@ -37,6 +40,8 @@ const skills = [
   { name: 'Scrum', icon: trelloIcon },
   { name: 'Pacote Office', icon: wordIcon },
   { name: 'Notion', icon: notionIcon },
+  { name: 'Dart', icon: dartIcon },
+  { name: 'Flutter', icon: flutterIcon },
 ];
 
 export default function Skills() {

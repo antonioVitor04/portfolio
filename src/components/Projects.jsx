@@ -44,6 +44,17 @@ const projetos = [
     },
     {
         id: 4,
+        nome: 'Site/Android app | Sistema para professores',
+        descricao:
+            'O Site/App consiste em um sistema de gestão acadêmica multiplataforma utilizando Flutter e Dart, com funcionalidades de gerenciamento de alunos, professores e notas. Implementação de um sistema interno de mensagens e um módulo de controle de materiais das disciplinas, garantindo comunicação eficiente e boa usabilidade tanto em ambientes web quanto Android',
+        ano: '2025',
+        imagem: '/images/projeto6.png',
+        tecnologias: ['Flutter', 'Dart', 'Node.js', 'Javascript', 'MongoDB', 'Figma', 'Git', 'GitHub'],
+        github: 'https://github.com/antonioVitor04/S4-Poliedro-Sistema-Para-Professores',
+        gitlab: ''
+    },
+    {
+        id: 5,
         nome: 'Jogo | acompanhando o ritmo',
         descricao:
             'Serão apresentadas sequências de movimentos, demonstradas por um boneco na cena, que os jogadores deverão repetir. Quanto mais fiel e preciso for o jogador ao acompanhar os movimentos do boneco, mais pontos ele receberá. Com o avanço do jogo, o número de notas e movimentos aumenta, enquanto o tempo entre cada ação diminui, tornando o desafio progressivamente mais difícil.',
@@ -55,7 +66,7 @@ const projetos = [
         linkedin: ''
     },
     {
-        id: 5,
+        id: 6,
         nome: 'Site | Portfolio',
         descricao:
             'O portfólio apresenta minhas informações pessoais em uma interface limpa e organizada',
